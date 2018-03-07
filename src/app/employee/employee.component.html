@@ -1,0 +1,38 @@
+  <!-- **************************form start -->
+  <form *ngIf='registerPage'>
+    <div class="form-group">
+      <label for="name">First name:</label>
+      <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" [(ngModel)]="employee.empFirstName">
+    </div>
+    <div class="form-group">
+      <label for="last">Last name:</label>
+      <input type="text" class="form-control" id="last" placeholder="Enter last name" name="last" [(ngModel)]="employee.empLastName">
+    </div>
+    <div class="form-group">
+      <label for="gender">Gender:</label>
+      <input type="text" class="form-control" id="gender" placeholder="Enter gender" name="gender" [(ngModel)]="employee.gender">
+    </div>
+    <input type="button" class="btn btn-primary" (click)="register()" value="Register" />
+  </form>
+  <!-- **************************form ended -->
+
+    <!-- **************************table start -->
+  <table class="table table-striped" *ngIf='employeePage'>
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Gender</th>
+        <th>Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of employeesData">
+        <td>{{emp?.empFirstName}}</td>
+        <td>{{emp?.empLastName}}</td>
+        <td>{{emp?.gender}}</td>
+        <td><button class="btn btn-primary" (click)="goToEdit(emp?.empId)">Edit</button> </td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- **************************table ended -->

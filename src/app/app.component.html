@@ -1,0 +1,32 @@
+  <div class="container">
+        <!-- **************************Chatbot html start -->
+        <div class="chatbot">
+            <div class="chatbot-header">
+                <span>Chatbot</span>
+                <span class="minimize-ico"><i class="material-icons">&#xE15B;</i></span>
+            </div>
+            <div class="chatbot-body">
+              <div [ngClass]="{'sent': chat.messageType == 'sent', 'recieve': chat.messageType != 'sent'}"  *ngFor="let chat of chatMessage">
+                {{chat.message}}
+                 </div>
+
+            </div>
+            <div class="chatbot-fotter">
+                <textarea id="abc" #chatInput="ngModel" [(ngModel)]="speechData" placeholder="Type text..."></textarea>
+                <span class="send-text" (click)="callChatbotApi()">
+          <i class="material-icons">&#xE163;</i>
+        </span>
+                <span class="record-text" *ngIf="showSearchButton"  (click)="activateSpeechSearchMovie()">
+          <i class="material-icons">&#xE029;</i>
+        </span>
+         <span class="record-text" *ngIf="!showSearchButton" (click)="stopRecording()">
+          <i class="material-icons">&#xE047;</i>
+        </span>
+            </div>
+        </div>
+        <!-- **************************Chatbot html End -->
+
+
+      <app-employee [page]="pageValue">
+      </app-employee>
+    </div>
