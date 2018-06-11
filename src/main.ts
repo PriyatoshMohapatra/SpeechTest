@@ -12,5 +12,5 @@ platformBrowserDynamic().bootstrapModule(AppModule).then(ref => {
   }
   window['ngRef'] = ref;
 
-  // Otherise, log the boot error
+  // Otherise, log the boot error bose test
 }).catch(err => console.error(err));
